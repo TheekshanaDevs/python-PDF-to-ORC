@@ -1,0 +1,56 @@
+{
+  "application": "PDF Notes Processor",
+  "version": "1.0.0",
+  "status": "completed",
+  "source_directory": "/home/theekshana/Work Space/python PDF to ORC/pdfnotes/samples",
+  "output_directory": "/home/theekshana/Work Space/python PDF to ORC/pdfnotes/output",
+  "ocr_languages": "eng",
+  "image_format": "png",
+  "image_dpi": 200,
+  "started_at": "2026-10-28T13:08:44.388967+00:00",
+  "finished_at": "2026-10-28T13:08:49.118862+00:00",
+  "duration_seconds": 4.73,
+  "summary": {
+    "pdfs_discovered": 2,
+    "pdfs_completed": 2,
+    "pdfs_failed": 0,
+    "pdfs_skipped": 0,
+    "pages_discovered": 4,
+    "pages_completed": 4,
+    "pages_failed": 0,
+    "images_created": 4,
+    "markdown_files_created": 2
+  },
+  "files": [
+    {
+      "source_path": "/home/theekshana/Work Space/python PDF to ORC/pdfnotes/samples/CS101_Lecture_01_Intro.pdf",
+      "relative_name": "CS101_Lecture_01_Intro",
+      "markdown_path": "/home/theekshana/Work Space/python PDF to ORC/pdfnotes/output/OCR/CS101_Lecture_01_Intro.md",
+      "page_count": 2,
+      "pages_completed": 2,
+      "pages_failed": 0,
+      "images_created": 2,
+      "ocr_failures": 0,
+      "native_text_failures": 0,
+      "processing_duration_seconds": 2.56,
+      "status": "completed",
+      "markdown_written": true,
+      "errors": null
+    },
+    {
+      "source_path": "/home/theekshana/Work Space/python PDF to ORC/pdfnotes/samples/CS101_Lecture_02_Neural_Networks.pdf",
+      "relative_name": "CS101_Lecture_02_Neural_Networks",
+      "markdown_path": "/home/theekshana/Work Space/python PDF to ORC/pdfnotes/output/OCR/CS101_Lecture_02_Neural_Networks.md",
+      "page_count": 2,
+      "pages_completed": 2,
+      "pages_failed": 0,
+      "images_created": 2,
+      "ocr_failures": 0,
+      "native_text_failures": 0,
+      "processing_duration_seconds": 2.13,
+      "status": "completed",
+      "markdown_written": true,
+      "errors": null
+    }
+  ]
+}

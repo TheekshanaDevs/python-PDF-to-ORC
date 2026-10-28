@@ -1,0 +1,19 @@
+2026-10-28 18:38:44 [INFO    ] pdfnotes.processor: Starting processing run
+2026-10-28 18:38:44 [INFO    ] pdfnotes.processor: Source: /home/theekshana/Work Space/python PDF to ORC/pdfnotes/samples
+2026-10-28 18:38:44 [INFO    ] pdfnotes.processor: Output: /home/theekshana/Work Space/python PDF to ORC/pdfnotes/output
+2026-10-28 18:38:44 [INFO    ] pdfnotes.processor: OCR languages: eng
+2026-10-28 18:38:44 [INFO    ] pdfnotes.processor: Image format: png, DPI: 200
+2026-10-28 18:38:44 [INFO    ] pdfnotes.processor: Tesseract found: /usr/bin/tesseract
+2026-10-28 18:38:44 [INFO    ] pdfnotes.ocr_engine: Validated OCR languages: eng
+2026-10-28 18:38:44 [INFO    ] pdfnotes.discovery: Discovered: CS101_Lecture_01_Intro.pdf (2 pages)
+2026-10-28 18:38:44 [INFO    ] pdfnotes.discovery: Discovered: CS101_Lecture_02_Neural_Networks.pdf (2 pages)
+2026-10-28 18:38:44 [INFO    ] pdfnotes.discovery: Discovery complete: 2 valid PDFs, 0 skipped
+2026-10-28 18:38:44 [INFO    ] pdfnotes.processor: Processing: CS101_Lecture_01_Intro.pdf (2 pages)
+2026-10-28 18:38:46 [INFO    ] pdfnotes.markdown_writer: Wrote Markdown: CS101_Lecture_01_Intro.md (915 bytes)
+2026-10-28 18:38:46 [INFO    ] pdfnotes.processor: Completed: CS101_Lecture_01_Intro.pdf in 2.6s (2/2 pages OK)
+2026-10-28 18:38:46 [INFO    ] pdfnotes.processor: Processing: CS101_Lecture_02_Neural_Networks.pdf (2 pages)
+2026-10-28 18:38:49 [INFO    ] pdfnotes.markdown_writer: Wrote Markdown: CS101_Lecture_02_Neural_Networks.md (878 bytes)
+2026-10-28 18:38:49 [INFO    ] pdfnotes.processor: Completed: CS101_Lecture_02_Neural_Networks.pdf in 2.1s (2/2 pages OK)
+2026-10-28 18:38:49 [INFO    ] pdfnotes.markdown_writer: Wrote combined Markdown: semester_combined.md (0.0 MB)
+2026-10-28 18:38:49 [INFO    ] pdfnotes.processor: Combined Markdown: /home/theekshana/Work Space/python PDF to ORC/pdfnotes/output/OCR/semester_combined.md (0.0 MB)
+2026-10-28 18:38:49 [INFO    ] pdfnotes.report_generator: Report saved: /home/theekshana/Work Space/python PDF to ORC/pdfnotes/output/report.json
