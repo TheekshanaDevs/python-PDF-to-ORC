@@ -69,6 +69,14 @@ def run_processing(config: ProcessingConfig) -> int:
         output_dir=config.resolved_output_dir,
     )
 
+    # Filter by user selection if specified
+    if config.selected_files:
+        selected_set = set(config.selected_files)
+        discovered = [
+            p for p in discovered
+            if p.path.name in selected_set or p.relative_name in selected_set or str(p.path) in selected_set
+        ]
+
     if not discovered:
         if skipped:
             logger.warning(

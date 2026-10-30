@@ -38,6 +38,13 @@ def build_parser() -> argparse.ArgumentParser:
 
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
 
+    # Interactive wizard command
+    subparsers.add_parser(
+        "interactive",
+        help="Launch interactive terminal wizard (arrow keys & checkboxes)",
+        description="Interactive wizard to choose folders, select files, and configure options.",
+    )
+
     # Process command
     process_parser = subparsers.add_parser(
         "process",
@@ -61,6 +68,13 @@ def build_parser() -> argparse.ArgumentParser:
         "source",
         type=str,
         help="Path to the folder containing PDF files",
+    )
+    process_parser.add_argument(
+        "--files", "-f",
+        type=str,
+        nargs="+",
+        default=None,
+        help="Optional: specific PDF file names to process inside the source folder",
     )
     process_parser.add_argument(
         "--output", "-o",
@@ -148,12 +162,21 @@ def main(argv: list[str] | None = None) -> int:
     Returns:
         Exit code: 0 = success, 1 = partial failure, 2 = fatal error.
     """
+    # If launched with no arguments in an interactive terminal, default to interactive wizard
+    if (argv is None and len(sys.argv) == 1 and sys.stdin.isatty()) or (argv == [] and sys.stdin.isatty()):
+        from pdfnotes.interactive import run_interactive_wizard
+        return run_interactive_wizard()
+
     parser = build_parser()
     args = parser.parse_args(argv)
 
     if args.command is None:
         parser.print_help()
         return 0
+
+    if args.command == "interactive":
+        from pdfnotes.interactive import run_interactive_wizard
+        return run_interactive_wizard()
 
     if args.command == "process":
         return _run_process(args)
@@ -186,6 +209,7 @@ def _run_process(args: argparse.Namespace) -> int:
         ocr_psm=args.ocr_psm,
         debug=args.debug,
         preprocess=not args.no_preprocess,
+        selected_files=args.files,
     )
 
     # Import here to avoid slow startup on --help

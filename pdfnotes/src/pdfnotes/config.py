@@ -25,6 +25,7 @@ class ProcessingConfig:
     debug: bool = False
     preprocess: bool = True  # Enable image preprocessing for OCR
     combined_size_warn_mb: float = 100.0  # Warn if combined MD exceeds this
+    selected_files: list[str] | None = None  # Specific PDF filenames/relative paths to process
 
     @property
     def resolved_output_dir(self) -> Path:

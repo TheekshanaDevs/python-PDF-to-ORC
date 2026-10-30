@@ -1,17 +1,43 @@
 # Usage Guide
 
-## Basic usage
+## Quickest way to run (Interactive Mode & File Selection)
 
-Process all PDFs in a folder:
+You can launch the program with a single click or command:
+
+```bash
+./run.sh
+```
+
+Or from inside `pdfnotes`:
+
+```bash
+pdfnotes
+# or
+pdfnotes interactive
+```
+
+This starts an interactive terminal interface that lets you:
+1. **Choose or paste your lecture folder path** (with path autocompletion)
+2. **Scan and view all discovered PDFs** with page counts and file sizes
+3. **Select/deselect specific files** using arrow keys and `[Space]`
+4. **Choose your output directory** (default or custom)
+5. **Optionally tune quality settings** (DPI, OCR language, PNG/JPEG)
+6. Press `Enter` to run with live progress bars!
+
+---
+
+## Command Line Usage (Non-interactive)
+
+Process all PDFs in a folder directly:
 
 ```bash
 pdfnotes process "/path/to/your/pdf-folder"
 ```
 
-Or using the module form:
+Or process only specific files inside a folder:
 
 ```bash
-python -m pdfnotes process "/path/to/your/pdf-folder"
+pdfnotes process "/path/to/your/pdf-folder" --files lecture01.pdf lecture03.pdf
 ```
 
 ## Command reference
