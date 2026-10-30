@@ -49,6 +49,15 @@ def run_interactive_wizard(default_dir: Path | None = None) -> int:
     Returns:
         Exit code: 0 on success, 1 on error/cancel.
     """
+    # Check if standard input is an interactive terminal
+    if not sys.stdin.isatty():
+        console.print("[bold yellow]Notice:[/bold yellow] No interactive terminal (TTY) detected.")
+        console.print("To run the interactive menu with arrow keys, please run in your system terminal:")
+        console.print("  [cyan]./run.sh[/cyan]\n")
+        console.print("Or use the CLI command directly:")
+        console.print("  [cyan]./run.sh process \"<path-to-folder>\" -o \"<output-folder>\"[/cyan]")
+        return 0
+
     console.print()
     console.print(
         Panel.fit(
@@ -70,12 +79,6 @@ def run_interactive_wizard(default_dir: Path | None = None) -> int:
         suggestions.append(str((Path.cwd() / "samples").resolve()))
     if Path.cwd().name == "pdfnotes" and (Path.cwd() / "samples").exists():
         suggestions.append("./samples")
-
-    # Check if standard input is an interactive terminal
-    if not sys.stdin.isatty():
-        console.print("[bold yellow]Note:[/bold yellow] Non-interactive terminal detected. Falling back to CLI mode.")
-        console.print("Run: [cyan]pdfnotes process --help[/cyan] to see options, or run directly in an interactive terminal.")
-        return 0
 
     try:
         source_input = questionary.text(
